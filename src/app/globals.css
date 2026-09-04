@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   Circle design tokens
+   Extracted from Figma file Ml7pn8kazowJZLyWNOn268 (Components + Screens).
+   See /design-system/tokens.json and design-system-notes.md for provenance.
+   ========================================================================== */
+
+:root {
+  /* color */
+  --color-surface-primary: #ffffff;
+  --color-surface-secondary: #fafafa;
+  --color-surface-brand: #0a0a0a;
+
+  --color-text-primary: #0a0a0a;
+  --color-text-secondary: #4a4a4a;
+  --color-text-tertiary: #a3959e;
+  --color-text-on-brand: #ffffff;
+
+  --color-border-primary: #d9d9d9;
+  --color-border-secondary: #e8e8e8;
+
+  --color-badge-neutral-bg: #fafafa;
+  --color-badge-neutral-text: #4a4a4a;
+  --color-badge-brand-bg: #0a0a0a;
+  --color-badge-brand-text: #ffffff;
+  --color-badge-success-bg: #50e600;
+  --color-badge-success-text: #effde8;
+  --color-badge-info-bg: #1d37fc;
+  --color-badge-info-text: #e8eafd;
+  --color-badge-warning-bg: #fc811d;
+  --color-badge-warning-text: #fdf1e8;
+  --color-badge-danger-bg: #fc1d1d;
+  --color-badge-danger-text: #fde8e8;
+
+  --color-state-success-primary: #009448;
+  --color-state-success-subtle: #d2fee0;
+  --color-state-warning-primary: #d18100;
+  --color-state-warning-subtle: #fdf1e8;
+  --color-state-danger-primary: #c81e1e;
+  --color-state-danger-subtle: #fde8e8;
+  --color-state-info-primary: #1d37fc;
+  --color-state-info-subtle: #e8eafd;
+  --color-state-unknown-primary: #8a7d86;
+  --color-state-unknown-subtle: #f4f1f3;
+
+  /* type */
+  --font-display: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+  --font-body: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-chip: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  /* space */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  /* radius */
+  --radius-xxs: 2px;
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* shadow */
+  --shadow-card: 2px 4px 6px rgba(10, 10, 10, 0.1);
+  --shadow-overlay: 0 12px 32px rgba(10, 10, 10, 0.24);
+
+  --background: var(--color-surface-secondary);
+  --foreground: var(--color-text-primary);
+}
+
+@theme inline {
+  --color-surface-primary: var(--color-surface-primary);
+  --color-surface-secondary: var(--color-surface-secondary);
+  --color-surface-brand: var(--color-surface-brand);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+  --color-text-on-brand: var(--color-text-on-brand);
+
+  --color-border-primary: var(--color-border-primary);
+  --color-border-secondary: var(--color-border-secondary);
+
+  --color-badge-neutral-bg: var(--color-badge-neutral-bg);
+  --color-badge-neutral-text: var(--color-badge-neutral-text);
+  --color-badge-brand-bg: var(--color-badge-brand-bg);
+  --color-badge-brand-text: var(--color-badge-brand-text);
+  --color-badge-success-bg: var(--color-badge-success-bg);
+  --color-badge-success-text: var(--color-badge-success-text);
+  --color-badge-info-bg: var(--color-badge-info-bg);
+  --color-badge-info-text: var(--color-badge-info-text);
+  --color-badge-warning-bg: var(--color-badge-warning-bg);
+  --color-badge-warning-text: var(--color-badge-warning-text);
+  --color-badge-danger-bg: var(--color-badge-danger-bg);
+  --color-badge-danger-text: var(--color-badge-danger-text);
+
+  --color-state-success-primary: var(--color-state-success-primary);
+  --color-state-success-subtle: var(--color-state-success-subtle);
+  --color-state-warning-primary: var(--color-state-warning-primary);
+  --color-state-warning-subtle: var(--color-state-warning-subtle);
+  --color-state-danger-primary: var(--color-state-danger-primary);
+  --color-state-danger-subtle: var(--color-state-danger-subtle);
+  --color-state-info-primary: var(--color-state-info-primary);
+  --color-state-info-subtle: var(--color-state-info-subtle);
+  --color-state-unknown-primary: var(--color-state-unknown-primary);
+  --color-state-unknown-subtle: var(--color-state-unknown-subtle);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-chip: var(--font-chip);
+
+  --spacing-1: var(--space-1);
+  --spacing-2: var(--space-2);
+  --spacing-3: var(--space-3);
+  --spacing-4: var(--space-4);
+  --spacing-6: var(--space-6);
+  --spacing-8: var(--space-8);
+  --spacing-12: var(--space-12);
+
+  --radius-xxs: var(--radius-xxs);
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-lg: var(--radius-lg);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-overlay: var(--shadow-overlay);
+}
+
+body {
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+}
+
+/* Utility: honest horizontal scroll containers never leak past the viewport */
+.scroll-x {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
