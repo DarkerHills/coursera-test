@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, Sora, Poppins } from "next/font/google";
+import { JetBrains_Mono, Sora, Poppins, Inter } from "next/font/google";
 import "./globals.css";
-import { NavBar } from "@/components/layout/NavBar";
 
 const jetbrainsMono = JetBrains_Mono({
   variable: "--font-display",
@@ -21,6 +20,17 @@ const poppins = Poppins({
   weight: ["400", "600"],
 });
 
+// Used by the My House My Way marketing route (`/my-house-my-way`) — the
+// Figma source specifies Satoshi for display type, which isn't distributable
+// via next/font/google; Inter at heavy weights is the closest same-family
+// substitute and is also the source's own body/UI face, so one family covers
+// both roles cleanly. See src/app/my-house-my-way/README.md for details.
+const inter = Inter({
+  variable: "--font-mhmw",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+});
+
 export const metadata: Metadata = {
   title: "Assay — check before you buy",
   description:
@@ -30,17 +40,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${jetbrainsMono.variable} ${sora.variable} ${poppins.variable} antialiased`}>
-        <div className="flex min-h-screen flex-col">
-          <NavBar />
-          <main className="flex-1">{children}</main>
-          <footer className="border-t border-border-secondary bg-surface-primary px-4 py-6 sm:px-6">
-            <p className="mx-auto max-w-6xl font-body text-[13px] leading-5 text-text-tertiary">
-              Assay reports what issuers publish and ages it — it does not verify assets itself and
-              does not touch custody, execution, or KYC. Not investment advice.
-            </p>
-          </footer>
-        </div>
+      <body
+        className={`${jetbrainsMono.variable} ${sora.variable} ${poppins.variable} ${inter.variable} antialiased`}
+      >
+        {children}
       </body>
     </html>
   );

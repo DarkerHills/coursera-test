@@ -146,3 +146,90 @@ body {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
+
+/* ==========================================================================
+   My House My Way (MHMW) design tokens
+   Extracted from Figma file 2sTnQUmetxsyRHlAtNUX9m (node 2901:41841 and the
+   sidebar component 2903:42227). This is a separate brand/surface living in
+   the same codebase as Assay's Circle system, so it gets its own namespaced
+   tokens rather than overloading --color-* above.
+   ========================================================================== */
+:root {
+  --mhmw-grey-10: #121212;
+  --mhmw-bg-default: #f7f7f5;
+  --mhmw-bg-medium: #d8d8d8;
+  --mhmw-bg-soft: #f2f2f2;
+  --mhmw-text-black: #2b2b2b;
+  --mhmw-primary-button: #1f3d3a;
+  --mhmw-primary-button-hover: #274d49;
+  --mhmw-star: #f5a623;
+
+  --font-mhmw-display: "Satoshi", var(--font-mhmw), ui-sans-serif, system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-mhmw-grey-10: var(--mhmw-grey-10);
+  --color-mhmw-bg-default: var(--mhmw-bg-default);
+  --color-mhmw-bg-medium: var(--mhmw-bg-medium);
+  --color-mhmw-bg-soft: var(--mhmw-bg-soft);
+  --color-mhmw-text-black: var(--mhmw-text-black);
+  --color-mhmw-primary-button: var(--mhmw-primary-button);
+  --color-mhmw-primary-button-hover: var(--mhmw-primary-button-hover);
+  --color-mhmw-star: var(--mhmw-star);
+  --font-mhmw-display: var(--font-mhmw-display);
+  --font-mhmw-body: var(--font-mhmw), ui-sans-serif, system-ui, sans-serif;
+}
+
+@keyframes mhmw-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes mhmw-fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mhmw-animate-in {
+  animation: mhmw-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.mhmw-animate-down {
+  animation: mhmw-fade-down 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes mhmw-kenburns {
+  0% {
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    transform: scale(1.08) translate(-1%, -1%);
+  }
+}
+
+.mhmw-kenburns {
+  animation: mhmw-kenburns 24s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mhmw-animate-in,
+  .mhmw-animate-down {
+    animation: none;
+  }
+  .mhmw-kenburns {
+    animation: none;
+  }
+}
