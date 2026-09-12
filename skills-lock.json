@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "baoyu-article-illustrator": {
+      "source": "jimliu/baoyu-skills",
+      "sourceType": "github",
+      "skillPath": "skills/baoyu-article-illustrator/SKILL.md",
+      "computedHash": "eb75713fa4ba1d1f3cd7b5462dc869848ded250eb406b6618fd65aaeaaaf7b5e"
+    },
+    "illustration-style": {
+      "source": "owl-listener/designer-skills",
+      "sourceType": "github",
+      "skillPath": "ui-design/skills/illustration-style/SKILL.md",
+      "computedHash": "085cef377895daf3fbdcba21c00089329dd631dd5469d24c667fc48c963fc108"
+    }
+  }
+}
