@@ -6,7 +6,7 @@ import { PropertyBrowse } from "@/components/mhmw/PropertyBrowse";
 import { MhmwLogo } from "@/components/mhmw/icons";
 
 export const metadata: Metadata = {
-  title: "My House My Way — find a house that suits the ways you live",
+  title: "My House My Way — find a house that suits the way you live",
   description:
     "Search homes by city, address, school or ZIP — browse verified listings built around the way you actually live.",
 };
@@ -34,7 +34,7 @@ export default function MyHouseMyWayPage() {
                     width that happens to wrap here — that window was a single
                     CSS pixel wide and would flip with any font-metric variance. */}
                 Find a house that
-                <br className="max-sm:hidden" /> suits the ways you live
+                <br className="max-sm:hidden" /> suits the way you live
               </h1>
               <div className="mhmw-animate-in w-full" style={{ animationDelay: "260ms" }}>
                 <EmailCapture />

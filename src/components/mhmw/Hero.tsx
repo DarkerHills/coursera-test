@@ -24,7 +24,7 @@ export function Hero() {
             className="mhmw-animate-in w-full text-center font-mhmw-display text-[28px] leading-[1.2] font-black text-mhmw-bg-default sm:text-[31px] sm:leading-[37.2px]"
             style={{ animationDelay: "220ms" }}
           >
-            Find a house that suits the ways you live
+            Find a house that suits the way you live
           </h1>
           <div className="mhmw-animate-in w-full" style={{ animationDelay: "340ms" }}>
             <EmailCapture />
