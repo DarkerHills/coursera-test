@@ -160,9 +160,12 @@ body {
   --mhmw-bg-medium: #d8d8d8;
   --mhmw-bg-soft: #f2f2f2;
   --mhmw-text-black: #2b2b2b;
+  --mhmw-text-muted: #848484;
   --mhmw-primary-button: #1f3d3a;
   --mhmw-primary-button-hover: #274d49;
   --mhmw-star: #f5a623;
+  --mhmw-accent-purple: #804aff;
+  --mhmw-accent-purple-hover: #6d38ea;
 
   --font-mhmw-display: "Satoshi", var(--font-mhmw), ui-sans-serif, system-ui, sans-serif;
 }
@@ -173,9 +176,12 @@ body {
   --color-mhmw-bg-medium: var(--mhmw-bg-medium);
   --color-mhmw-bg-soft: var(--mhmw-bg-soft);
   --color-mhmw-text-black: var(--mhmw-text-black);
+  --color-mhmw-text-muted: var(--mhmw-text-muted);
   --color-mhmw-primary-button: var(--mhmw-primary-button);
   --color-mhmw-primary-button-hover: var(--mhmw-primary-button-hover);
   --color-mhmw-star: var(--mhmw-star);
+  --color-mhmw-accent-purple: var(--mhmw-accent-purple);
+  --color-mhmw-accent-purple-hover: var(--mhmw-accent-purple-hover);
   --font-mhmw-display: var(--font-mhmw-display);
   --font-mhmw-body: var(--font-mhmw), ui-sans-serif, system-ui, sans-serif;
 }

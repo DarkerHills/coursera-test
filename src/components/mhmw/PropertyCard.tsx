@@ -5,9 +5,13 @@ export function PropertyCard({ listing }: { listing: Listing }) {
   return (
     <div className="group flex w-full flex-col gap-3">
       <div
-        className="relative aspect-square w-full overflow-hidden rounded-xl transition-transform duration-300 group-hover:-translate-y-1"
-        style={{ backgroundImage: listing.hue }}
+        className="relative aspect-square w-full overflow-hidden rounded-xl bg-mhmw-bg-soft transition-transform duration-300 group-hover:-translate-y-1"
+        style={!listing.image ? { backgroundImage: listing.hue } : undefined}
       >
+        {listing.image && (
+          // eslint-disable-next-line @next/next/no-img-element -- fixed-size card thumbnail, no responsive srcset needed
+          <img src={listing.image} alt="" className="size-full object-cover" />
+        )}
         <button
           type="button"
           aria-label="Save listing"
@@ -16,26 +20,24 @@ export function PropertyCard({ listing }: { listing: Listing }) {
           <HeartIcon className="size-4" />
         </button>
       </div>
-      <div className="flex items-center justify-between gap-2">
-        <p className="truncate font-mhmw-body text-[15px] font-semibold text-mhmw-text-black">{listing.title}</p>
+      <p className="truncate font-mhmw-body text-[16px] font-semibold text-mhmw-text-black">{listing.title}</p>
+      <div className="flex items-center justify-between gap-2 font-mhmw-body">
+        <span className="text-[17px] font-bold text-mhmw-text-black">{listing.price}</span>
+        <span className="truncate text-[13px] text-mhmw-text-muted">{listing.address}</span>
       </div>
-      <div className="flex items-center gap-2 font-mhmw-body text-[13px]">
-        <span className="font-semibold text-mhmw-text-black">{listing.price}</span>
-        <span className="truncate text-mhmw-text-black/50">{listing.address}</span>
-      </div>
-      <div className="flex items-center gap-4 border-t border-black/10 pt-2.5 text-mhmw-text-black/70">
-        <span className="flex flex-col items-center gap-1 text-[11px]">
-          <BedIcon className="size-[15px]" />
+      <div className="grid grid-cols-3 gap-2">
+        <div className="flex flex-col items-center gap-1 rounded-lg bg-mhmw-bg-soft py-2.5 text-[11px] font-medium text-mhmw-text-black/75">
+          <BedIcon className="size-4" />
           {listing.beds} Beds
-        </span>
-        <span className="flex flex-col items-center gap-1 text-[11px]">
-          <BathIcon className="size-[15px]" />
+        </div>
+        <div className="flex flex-col items-center gap-1 rounded-lg bg-mhmw-bg-soft py-2.5 text-[11px] font-medium text-mhmw-text-black/75">
+          <BathIcon className="size-4" />
           {listing.baths} Baths
-        </span>
-        <span className="flex flex-col items-center gap-1 text-[11px]">
-          <RulerIcon className="size-[15px]" />
+        </div>
+        <div className="flex flex-col items-center gap-1 rounded-lg bg-mhmw-bg-soft py-2.5 text-[11px] font-medium text-mhmw-text-black/75">
+          <RulerIcon className="size-4" />
           {listing.sqft} SQ FT
-        </span>
+        </div>
       </div>
     </div>
   );

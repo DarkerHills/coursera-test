@@ -50,11 +50,11 @@ export function CheckFatIcon({ className = "" }: { className?: string }) {
 
 /**
  * Icon set for the "browse properties" landing page (node 2979:26811).
- * Same situation as above — Figma's asset API is unreachable, so these are
- * small hand-drawn line icons approximating the named Phosphor-style glyphs
- * referenced in the source (MagnifyingGlass, HouseLine, Barn, Building,
- * GridNine, VideoCamera, FadersHorizontal, Bed, Shower, Ruler, Key,
- * Warehouse) rather than the real exports.
+ * Most of these are hand-drawn approximations of the named Phosphor-style
+ * glyphs (MagnifyingGlass, HouseLine, Barn, Building, GridNine, VideoCamera,
+ * FadersHorizontal, Bed, Shower, Ruler) since Figma's asset API is
+ * unreachable from this sandbox. Key and Warehouse below are the real
+ * exports the user supplied directly.
  */
 
 const iconProps = {
@@ -172,21 +172,45 @@ export function RulerIcon({ className = "" }: { className?: string }) {
   );
 }
 
+// Real exports supplied by the user (Key.svg / Warehouse.svg), recolored to
+// currentColor so they inherit context like the rest of this set.
 export function KeyIcon({ className = "" }: { className?: string }) {
   return (
-    <svg {...iconProps} className={className}>
-      <circle cx="8" cy="15" r="4.5" />
-      <path d="M11.5 11.5 20 3M17 6l2.5 2.5M14.5 8.5 16.5 10.5" />
+    <svg viewBox="0 0 39 39" fill="none" className={className} aria-hidden="true">
+      <path
+        d="M13.9763 18.4241C13.4604 17.1405 13.1971 15.7695 13.2008 14.3861C13.2008 8.5991 17.8628 3.7901 23.6468 3.6056C25.1243 3.55635 26.5963 3.81098 27.9714 4.35371C29.3466 4.89644 30.5956 5.71572 31.6413 6.7608C32.6869 7.80589 33.5069 9.05452 34.0503 10.4294C34.5938 11.8042 34.8492 13.276 34.8008 14.7536C34.6103 20.5376 29.8013 25.1996 24.0143 25.1996C22.6309 25.2033 21.2599 24.94 19.9763 24.4241L18.0008 26.3996H14.4008V29.9996H10.8008V33.5996H6.00078C5.68252 33.5996 5.3773 33.4732 5.15225 33.2481C4.92721 33.0231 4.80078 32.7179 4.80078 32.3996V28.0961C4.80093 27.7783 4.92716 27.4735 5.15178 27.2486L13.9763 18.4241Z"
+        stroke="currentColor"
+        strokeWidth="2.4"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M26.9992 13.1996C27.9933 13.1996 28.7992 12.3937 28.7992 11.3996C28.7992 10.4055 27.9933 9.59961 26.9992 9.59961C26.0051 9.59961 25.1992 10.4055 25.1992 11.3996C25.1992 12.3937 26.0051 13.1996 26.9992 13.1996Z"
+        fill="currentColor"
+      />
     </svg>
   );
 }
 
 export function WarehouseIcon({ className = "" }: { className?: string }) {
   return (
+    <svg viewBox="0 0 47 47" fill="none" className={className} aria-hidden="true">
+      <g stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M37.2523 36.6531L4.65035 28.5245" />
+        <path d="M9.87691 7.56748L40.737 22.6822" />
+        <path d="M29.1017 34.6222L31.4242 25.3074L15.1232 21.2431L12.8007 30.5579" />
+        <path d="M30.264 29.9636L13.963 25.8993" />
+        <path d="M38.5316 21.6023L34.9234 36.0738" />
+        <path d="M12.0804 8.64722L6.97936 29.1064" />
+      </g>
+    </svg>
+  );
+}
+
+export function HamburgerIcon({ className = "" }: { className?: string }) {
+  return (
     <svg {...iconProps} className={className}>
-      <path d="M3 9.5 12 4l9 5.5" />
-      <path d="M3.5 9v11h17V9" />
-      <path d="M7.5 20v-6h4v6M14 12.5h3M14 15.5h3" />
+      <path d="M3.5 6.5h17M3.5 12h17M3.5 17.5h17" />
     </svg>
   );
 }
