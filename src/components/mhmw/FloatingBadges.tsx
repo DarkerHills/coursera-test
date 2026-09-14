@@ -18,7 +18,7 @@ export function FloatingBadges() {
       {BADGES.map(({ left, top, icon: Icon, gradient }, i) => (
         <div
           key={i}
-          className="mhmw-animate-in absolute size-20 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/40 shadow-lg backdrop-blur-sm lg:size-28"
+          className="mhmw-animate-in absolute size-20 -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/10 shadow-lg lg:size-28"
           style={{ left, top, backgroundImage: gradient, animationDelay: `${400 + i * 120}ms` }}
         >
           {Icon && (

@@ -5,7 +5,7 @@ const LINKS = ["News", "About Us", "Contact Us"];
 
 export function Nav() {
   return (
-    <div className="mhmw-animate-down flex w-full items-center justify-between px-8 py-6">
+    <div className="mhmw-animate-down flex w-full items-center justify-between bg-mhmw-grey-10 px-8 py-6">
       <Link href="/" className="flex items-center gap-1.5 text-mhmw-bg-default">
         <MhmwLogo />
       </Link>
