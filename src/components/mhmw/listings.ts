@@ -17,7 +17,15 @@ export type Listing = {
 };
 
 const BASE_LISTINGS: Omit<Listing, "hue">[] = [
-  { title: "Modern Mansion", price: "$1,250,000", address: "24407 Strong Pine Dr, Austin TX", beds: 5, baths: 4, sqft: "3,900" },
+  {
+    title: "Modern Mansion",
+    price: "$1,250,000",
+    address: "24407 Strong Pine Dr, Austin TX",
+    beds: 5,
+    baths: 4,
+    sqft: "3,900",
+    image: "/listing-mansion.jpg",
+  },
   {
     title: "Minimalist Courtyard Loft",
     price: "$560,000",
@@ -27,10 +35,34 @@ const BASE_LISTINGS: Omit<Listing, "hue">[] = [
     sqft: "1,340",
     image: "/listing-interior.png",
   },
-  { title: "Modern Home in Queens", price: "$675,000", address: "52 Maple Grove Ave, Queens NY", beds: 3, baths: 2, sqft: "1,680" },
-  { title: "Japanese Zen House", price: "$940,000", address: "9 Koi Pond Way, Portland OR", beds: 4, baths: 3, sqft: "2,400" },
+  {
+    title: "Modern Home in Queens",
+    price: "$675,000",
+    address: "52 Maple Grove Ave, Queens NY",
+    beds: 3,
+    baths: 2,
+    sqft: "1,680",
+    image: "/listing-queens.jpg",
+  },
+  {
+    title: "Japanese Zen House",
+    price: "$940,000",
+    address: "9 Koi Pond Way, Portland OR",
+    beds: 4,
+    baths: 3,
+    sqft: "2,400",
+    image: "/listing-zen.jpg",
+  },
   { title: "Coastal Glass Retreat", price: "$1,480,000", address: "3 Driftwood Ct, Malibu CA", beds: 4, baths: 4, sqft: "3,200" },
-  { title: "Modern 3 Bedroom with Pool", price: "$890,000", address: "118 Cedar Ridge Ln, Denver CO", beds: 3, baths: 3, sqft: "2,150" },
+  {
+    title: "Modern 3 Bedroom with Pool",
+    price: "$890,000",
+    address: "118 Cedar Ridge Ln, Denver CO",
+    beds: 3,
+    baths: 3,
+    sqft: "2,150",
+    image: "/listing-pool.jpg",
+  },
   { title: "Hillside Timber Cabin", price: "$725,000", address: "210 Alder Peak Dr, Boulder CO", beds: 3, baths: 2, sqft: "1,920" },
   {
     title: "Sunlit Garden Bungalow",
