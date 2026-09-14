@@ -25,12 +25,16 @@ export default function MyHouseMyWayPage() {
           <Nav />
           <div className="relative mx-auto flex max-w-[1440px] flex-col items-center justify-center px-6 py-12 sm:py-24 lg:py-32">
             <FloatingBadges />
-            <div className="relative z-10 flex w-full max-w-md flex-col items-center gap-5 text-center sm:gap-6">
+            <div className="relative z-10 flex w-full max-w-[400px] flex-col items-center gap-5 text-center sm:gap-6">
               <h1
                 className="mhmw-animate-in font-mhmw-display text-[26px] leading-[1.2] font-black text-mhmw-text-black sm:text-[31px] sm:leading-[37.2px]"
                 style={{ animationDelay: "150ms" }}
               >
-                Find a house that suits the ways you live
+                {/* Forced break (desktop+ only) instead of relying on a container
+                    width that happens to wrap here — that window was a single
+                    CSS pixel wide and would flip with any font-metric variance. */}
+                Find a house that
+                <br className="max-sm:hidden" /> suits the ways you live
               </h1>
               <div className="mhmw-animate-in w-full" style={{ animationDelay: "260ms" }}>
                 <EmailCapture />
