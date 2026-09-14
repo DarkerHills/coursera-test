@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { MhmwLogo } from "./icons";
 
 const LINKS = ["News", "About Us", "Contact Us"];
 
 export function Nav() {
   return (
-    <div className="mhmw-animate-down flex w-full items-center justify-end gap-[71px] px-8 py-6">
+    <div className="mhmw-animate-down flex w-full items-center justify-between px-8 py-6">
+      <Link href="/" className="flex items-center gap-1.5 text-mhmw-bg-default">
+        <MhmwLogo />
+      </Link>
       <nav className="hidden items-center gap-4 font-mhmw-body text-[15px] font-semibold text-mhmw-bg-default capitalize sm:flex">
         {LINKS.map((link) => (
           <Link

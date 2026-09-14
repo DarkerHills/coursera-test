@@ -47,3 +47,154 @@ export function CheckFatIcon({ className = "" }: { className?: string }) {
     </svg>
   );
 }
+
+/**
+ * Icon set for the "browse properties" landing page (node 2979:26811).
+ * Same situation as above — Figma's asset API is unreachable, so these are
+ * small hand-drawn line icons approximating the named Phosphor-style glyphs
+ * referenced in the source (MagnifyingGlass, HouseLine, Barn, Building,
+ * GridNine, VideoCamera, FadersHorizontal, Bed, Shower, Ruler, Key,
+ * Warehouse) rather than the real exports.
+ */
+
+const iconProps = {
+  viewBox: "0 0 24 24",
+  fill: "none" as const,
+  stroke: "currentColor",
+  strokeWidth: 1.7,
+  strokeLinecap: "round" as const,
+  strokeLinejoin: "round" as const,
+  "aria-hidden": true as const,
+};
+
+export function SearchIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <circle cx="11" cy="11" r="6.5" />
+      <path d="M20 20l-4.35-4.35" />
+    </svg>
+  );
+}
+
+export function HouseLineIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <path d="M4 11.5 12 4l8 7.5" />
+      <path d="M6 10v9a1 1 0 0 0 1 1h3v-5h4v5h3a1 1 0 0 0 1-1v-9" />
+    </svg>
+  );
+}
+
+export function BarnIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <path d="M3 11 12 4l9 7" />
+      <path d="M4 10.5V20h16v-9.5" />
+      <path d="M12 4v16" />
+      <path d="M9 20v-5a3 3 0 0 1 6 0v5" />
+    </svg>
+  );
+}
+
+export function BuildingIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <rect x="6" y="3" width="12" height="18" rx="1" />
+      <path d="M9.5 7h1M13.5 7h1M9.5 11h1M13.5 11h1M9.5 15h1M13.5 15h1" />
+      <path d="M10 21v-3h4v3" />
+    </svg>
+  );
+}
+
+export function GridNineIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <rect x="3.5" y="3.5" width="5" height="5" rx="0.5" />
+      <rect x="9.5" y="3.5" width="5" height="5" rx="0.5" />
+      <rect x="15.5" y="3.5" width="5" height="5" rx="0.5" />
+      <rect x="3.5" y="9.5" width="5" height="5" rx="0.5" />
+      <rect x="9.5" y="9.5" width="5" height="5" rx="0.5" />
+      <rect x="15.5" y="9.5" width="5" height="5" rx="0.5" />
+      <rect x="3.5" y="15.5" width="5" height="5" rx="0.5" />
+      <rect x="9.5" y="15.5" width="5" height="5" rx="0.5" />
+      <rect x="15.5" y="15.5" width="5" height="5" rx="0.5" />
+    </svg>
+  );
+}
+
+export function VideoCameraIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <rect x="3" y="6" width="13" height="12" rx="2" />
+      <path d="M16 10.5 21 7v10l-5-3.5" />
+    </svg>
+  );
+}
+
+export function FadersHorizontalIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <path d="M4 7h9M17 7h3" />
+      <circle cx="14" cy="7" r="2.3" />
+      <path d="M4 17h3M11 17h9" />
+      <circle cx="8" cy="17" r="2.3" />
+    </svg>
+  );
+}
+
+export function BedIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <path d="M3 18v-6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v6" />
+      <path d="M3 18v2M21 18v2" />
+      <path d="M3 14h18" />
+      <rect x="5" y="9.5" width="6" height="2.5" rx="0.6" />
+    </svg>
+  );
+}
+
+export function BathIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <path d="M4 12h16v3a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4v-3Z" />
+      <path d="M6 12V6a2 2 0 0 1 3-1.7" />
+      <path d="M6 19v2M16 19v2" />
+    </svg>
+  );
+}
+
+export function RulerIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <rect x="3" y="8" width="18" height="8" rx="1.5" transform="rotate(-45 12 12)" />
+      <path d="M9.5 9.5 11 11M12.5 6.5 14 8M6.5 12.5 8 14" />
+    </svg>
+  );
+}
+
+export function KeyIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <circle cx="8" cy="15" r="4.5" />
+      <path d="M11.5 11.5 20 3M17 6l2.5 2.5M14.5 8.5 16.5 10.5" />
+    </svg>
+  );
+}
+
+export function WarehouseIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <path d="M3 9.5 12 4l9 5.5" />
+      <path d="M3.5 9v11h17V9" />
+      <path d="M7.5 20v-6h4v6M14 12.5h3M14 15.5h3" />
+    </svg>
+  );
+}
+
+export function HeartIcon({ className = "" }: { className?: string }) {
+  return (
+    <svg {...iconProps} className={className}>
+      <path d="M12 20s-7.2-4.35-9.5-8.6C.86 8.1 2.3 4.8 5.6 4.2c1.9-.35 3.7.55 4.9 2.15C11.7 4.75 13.5 3.85 15.4 4.2c3.3.6 4.74 3.9 3.1 7.2C19.2 15.65 12 20 12 20Z" />
+    </svg>
+  );
+}
