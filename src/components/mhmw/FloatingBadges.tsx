@@ -1,35 +1,44 @@
 import { KeyIcon, WarehouseIcon } from "./icons";
 
-// Decorative circular badges flanking the headline (node 2979:26811 —
-// "MacBook Air - 447/449/450/451"). Two carry a real icon (Key, Warehouse —
-// exports the user supplied); the other two are plain photo-style bubbles in
-// the source with no icon, rendered here as soft gradient swatches since the
-// real thumbnails couldn't be pulled from Figma.
-//
-// Positions are spread toward the vertical extremes (not the Figma percentages,
-// which assumed a ~1024px-tall photo hero) so they clear the headline/form
-// column now that this section is compact and content-driven.
+// Decorative tilted cards scattered around the headline (node 2979:26811 —
+// "MacBook Air - 447/449/450/451"). Two are real listing photos (the exact
+// ones the Figma source left blank/untextured — "plain photo-style bubbles
+// with no icon" in the metadata), the other two carry a real icon (Key,
+// Warehouse). All four are user-supplied assets.
 const BADGES = [
-  { left: "6%", top: "14%", icon: null, gradient: "linear-gradient(135deg,#cbb994,#7c6547)" },
-  { left: "14%", top: "82%", icon: KeyIcon, gradient: "linear-gradient(135deg,#e7d2ad,#a3784a)" },
-  { left: "86%", top: "82%", icon: null, gradient: "linear-gradient(135deg,#a9b6a1,#5c6b52)" },
-  { left: "94%", top: "14%", icon: WarehouseIcon, gradient: "linear-gradient(135deg,#c9b6c9,#6f6a8c)" },
+  { left: "9%", top: "42%", rotate: "-8deg", kind: "photo", src: "/listing-exterior.png" },
+  { left: "13%", top: "78%", rotate: "6deg", kind: "icon", Icon: KeyIcon },
+  { left: "91%", top: "38%", rotate: "8deg", kind: "icon", Icon: WarehouseIcon },
+  { left: "87%", top: "78%", rotate: "-6deg", kind: "photo", src: "/listing-interior.png" },
 ] as const;
 
 export function FloatingBadges() {
   return (
     <div className="pointer-events-none absolute inset-0 hidden sm:block" aria-hidden="true">
-      {BADGES.map(({ left, top, icon: Icon, gradient }, i) => (
+      {BADGES.map((badge, i) => (
+        // Two nested elements on purpose: the outer one is a zero-size anchor
+        // that owns the fade-up entrance (mhmw-animate-in drives its own
+        // `transform`); the inner one owns the permanent centering + tilt.
+        // Sharing one element between them would have the animation's
+        // `transform` keyframes clobber the tilt once the fade-in finishes.
         <div
           key={i}
-          className="mhmw-animate-in absolute size-20 -translate-x-1/2 -translate-y-1/2 rounded-full border border-black/10 shadow-lg lg:size-28"
-          style={{ left, top, backgroundImage: gradient, animationDelay: `${400 + i * 120}ms` }}
+          className="mhmw-animate-in absolute"
+          style={{ left: badge.left, top: badge.top, animationDelay: `${400 + i * 120}ms` }}
         >
-          {Icon && (
-            <div className="flex size-full items-center justify-center rounded-full bg-black/20 text-mhmw-bg-default">
-              <Icon className="size-6 lg:size-8" />
-            </div>
-          )}
+          <div
+            className="absolute size-28 rounded-2xl border border-black/5 bg-white p-2 shadow-[0_16px_32px_rgba(0,0,0,0.14)] lg:size-36"
+            style={{ left: 0, top: 0, transform: `translate(-50%, -50%) rotate(${badge.rotate})` }}
+          >
+            {badge.kind === "photo" ? (
+              // eslint-disable-next-line @next/next/no-img-element -- fixed-size decorative thumbnail
+              <img src={badge.src} alt="" className="size-full rounded-xl object-cover" />
+            ) : (
+              <div className="flex size-full items-center justify-center rounded-xl bg-mhmw-bg-soft text-mhmw-text-black">
+                <badge.Icon className="size-9 lg:size-11" />
+              </div>
+            )}
+          </div>
         </div>
       ))}
     </div>

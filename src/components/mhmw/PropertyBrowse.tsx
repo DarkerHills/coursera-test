@@ -32,7 +32,7 @@ export function PropertyBrowse() {
 
   return (
     <section
-      className="relative z-10 mx-3 -mt-10 rounded-2xl bg-mhmw-bg-default p-4 shadow-[0_24px_64px_rgba(0,0,0,0.18)] sm:mx-6 sm:-mt-14 sm:p-6 md:-mt-16 lg:mx-auto lg:max-w-[960px] lg:p-8"
+      className="mhmw-ruled-bg relative z-10 mx-3 -mt-10 rounded-[28px] p-4 shadow-[0_32px_80px_rgba(0,0,0,0.16)] sm:mx-6 sm:-mt-14 sm:rounded-[32px] sm:p-6 md:-mt-16 lg:mx-auto lg:max-w-[960px] lg:p-8"
       data-node-id="2979:26878"
     >
       {/* mini header: hamburger + logo / search / login — node "Frame 573" + "Frame 177" + "Frame 175" */}

@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 export default function MyHouseMyWayPage() {
   return (
     <div className="flex min-h-screen w-full flex-col bg-mhmw-grey-10" data-node-id="2979:26811">
-      <div className="relative isolate overflow-hidden bg-mhmw-bg-default">
+      <div className="mhmw-ruled-bg relative isolate overflow-hidden">
         <Nav />
-        <div className="relative mx-auto flex max-w-[1440px] flex-col items-center justify-center px-6 py-12 sm:py-16 lg:py-20">
+        <div className="relative mx-auto flex max-w-[1440px] flex-col items-center justify-center px-6 py-12 sm:py-24 lg:py-32">
           <FloatingBadges />
           <div className="relative z-10 flex w-full max-w-md flex-col items-center gap-5 text-center sm:gap-6">
             <h1

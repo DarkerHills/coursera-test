@@ -21,13 +21,14 @@ export function Nav() {
             </Link>
           ))}
         </nav>
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex items-center gap-3 sm:gap-4">
           <Link
             href="#"
-            className="hidden items-center justify-center rounded-sm border border-white/40 px-4 py-2 font-mhmw-body text-[15px] font-semibold text-mhmw-bg-default capitalize backdrop-blur-[2px] transition-colors hover:border-white/70 hover:bg-white/10 sm:flex"
+            className="hidden items-center justify-center font-mhmw-body text-[15px] font-semibold text-mhmw-bg-default capitalize transition-opacity hover:opacity-80 sm:flex"
           >
             Login
           </Link>
+          <div className="hidden h-6 w-px bg-white/25 sm:block" aria-hidden="true" />
           <button
             type="button"
             className="rounded-sm bg-mhmw-bg-soft px-3 py-2 font-mhmw-body text-[13px] font-semibold text-mhmw-text-black capitalize shadow-sm transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-lg active:translate-y-0 sm:px-4 sm:text-[15px]"

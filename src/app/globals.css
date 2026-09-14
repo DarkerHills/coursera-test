@@ -230,6 +230,15 @@ body {
   will-change: transform;
 }
 
+/* Subtle ruled-line texture on the light sections, sampled from the user's
+   supplied "MHMW hero background.png" (a ~1px #f0f0ee line every ~32px CSS
+   px over #f7f7f5) — recreated as CSS instead of shipping a 6124x4096 image
+   for an effect this faint. */
+.mhmw-ruled-bg {
+  background-color: var(--mhmw-bg-default);
+  background-image: repeating-linear-gradient(to bottom, #f0f0ee 0px, #f0f0ee 1px, transparent 1px, transparent 32px);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .mhmw-animate-in,
   .mhmw-animate-down {
